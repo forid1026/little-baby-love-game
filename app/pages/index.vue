@@ -4,6 +4,7 @@ const daddy = useDaddyMessages()
 const { dailyNote } = useMommyNotes()
 const rewards = useRewards()
 const { play } = useSound()
+const install = useInstall()
 
 const hello = computed(() => `Hello ${game.value.mommyName || 'Mommy'}! ❤️`)
 const dateText = computed(() => prettyDate(rewards.today.value))
@@ -51,6 +52,12 @@ const shortcuts = computed(() => [
         <p class="muted text-sm">{{ rewards.claimedToday.value ? `Day ${rewards.cycleDay.value} of 7 · come back tomorrow` : `Day ${rewards.cycleDay.value}: ${rewards.todaysReward.value.label}` }}</p>
       </div>
       <NuxtLink to="/rewards" class="btn btn-primary btn-sm no-underline" @click="play('click')">{{ rewards.claimedToday.value ? 'View' : 'Claim' }}</NuxtLink>
+    </section>
+
+    <section v-if="install.canInstall.value" class="card card-pad mb-4 flex items-center gap-3">
+      <div class="text-4xl" aria-hidden="true">📲</div>
+      <p class="flex-1 font-extrabold" style="line-height:1.25">Install Little Baby Love on your phone</p>
+      <button class="btn btn-primary btn-sm" @click="install.install()">Install</button>
     </section>
 
     <h2 class="h2 mb-2">Quick play</h2>

@@ -8,7 +8,6 @@ const minSplash = ref(true)
 const showSplash = computed(() => !ready.value || minSplash.value)
 
 onMounted(() => {
-  install.init()
   setTimeout(() => { minSplash.value = false }, 1400)
 })
 
