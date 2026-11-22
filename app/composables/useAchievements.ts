@@ -18,6 +18,7 @@ export function useAchievements() {
   const dress = useModule('dress')
   const mommy = useModule('mommy')
   const daddy = useModule('daddy')
+  const care = useModule('care')
   const { addCoins, addStars, unlock } = useCoins()
   const modal = useRewardModal()
   const { play } = useSound()
@@ -37,6 +38,7 @@ export function useAchievements() {
     { id: 'message_collector', title: 'Message Collector', desc: "Favourite 10 of Mommy's Love Notes.", icon: '💌', target: 10, coins: 40, stars: 2, progress: () => mommy.value.favorites.length },
     { id: 'baby_room_complete', title: 'Baby Room Completed', desc: 'Add a crib, lamp, rug, curtains, window, cuddly toy and wall decoration.', icon: '🏠', target: ROOM_COMPLETE_REQUIREMENTS.length, coins: 80, stars: 3, unlock: 'crib_cloud', progress: roomRequirementsMet },
     { id: 'daddy_love', title: "Daddy's Love", desc: "Open 5 of Daddy's Secret Messages.", icon: '💝', target: 5, coins: 50, stars: 2, progress: () => daddy.value.messages.filter(m => m.seenAt).length },
+    { id: 'baby_carer', title: 'Caring Mommy', desc: 'Complete 20 Baby Care activities.', icon: '🍼', target: 20, coins: 40, stars: 2, unlock: 'hat_bear', progress: () => care.value.total },
     { id: 'coin_collector', title: 'Coin Collector', desc: 'Earn 500 coins in total.', icon: '🪙', target: 500, coins: 50, stars: 2, progress: () => game.value.stats.totalCoinsEarned },
   ]
 

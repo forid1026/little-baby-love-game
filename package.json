@@ -9,7 +9,7 @@
     "build": "nuxt generate",
     "preview": "npx serve .output/public -l 4173",
     "typecheck": "nuxt typecheck",
-    "test": "node tests/utils.test.ts && node tests/bubble-engine.test.ts",
+    "test": "node tests/utils.test.ts && node tests/bubble-engine.test.ts && node tests/care-engine.test.ts",
     "postinstall": "nuxt prepare",
     "icons": "node scripts/generate-icons.mjs && capacitor-assets generate --android",
     "cap:sync": "nuxt generate && cap sync android",

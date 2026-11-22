@@ -6,6 +6,7 @@ const game = useModule('game')
 const room = useModule('room')
 const dress = useModule('dress')
 const mommy = useModule('mommy')
+const care = useModule('care')
 const daddy = useModule('daddy')
 const ach = useAchievements()
 const { isUnlocked } = useCoins()
@@ -17,6 +18,7 @@ const rows = computed(() => [
   { icon: '🫧', label: 'Bubble levels cleared', value: s.value.bubbleLevelsCleared },
   { icon: '🏅', label: 'Best bubble score', value: s.value.bubbleBestScore },
   { icon: '🛏️', label: 'Items in baby room', value: room.value.placed.length },
+  { icon: '🍼', label: 'Baby care activities', value: care.value.total },
   { icon: '👗', label: 'Saved outfits', value: dress.value.favorites.length },
   { icon: '🔥', label: 'Best daily streak', value: `${game.value.rewards.bestStreak} days` },
   { icon: '🎁', label: 'Daily rewards claimed', value: game.value.rewards.totalClaims },

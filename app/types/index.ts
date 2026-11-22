@@ -84,6 +84,15 @@ export interface JourneyState {
   memories: PersonalNote[]
 }
 
+export type CareNeed = 'hunger' | 'clean' | 'diaper' | 'sleep' | 'fun'
+export interface CareState {
+  needs: Record<CareNeed, number> // 0-100
+  lastTick: number // ms timestamp of last update
+  total: number // care activities completed
+  counts: Record<CareNeed, number>
+  lastBonusDate: string | null
+}
+
 export interface Modules {
   game: GameState
   room: RoomState
@@ -91,6 +100,7 @@ export interface Modules {
   mommy: MommyState
   daddy: DaddyState
   journey: JourneyState
+  care: CareState
 }
 export type ModuleKey = keyof Modules
 

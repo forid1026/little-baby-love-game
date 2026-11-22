@@ -1,7 +1,7 @@
 import type { ModuleKey } from '~/types'
 import { SCHEMA_VERSION } from '~/utils/defaults'
 
-const KEYS: ModuleKey[] = ['game', 'room', 'dress', 'mommy', 'daddy', 'journey']
+const KEYS: ModuleKey[] = ['game', 'room', 'dress', 'mommy', 'daddy', 'journey', 'care']
 
 export function useBackup() {
   const settingsApi = useSettings()

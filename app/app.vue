@@ -14,7 +14,7 @@ onMounted(() => {
 
 // Achievements are checked whenever progress changes (debounced).
 let t: ReturnType<typeof setTimeout> | undefined
-const modules = ['game', 'room', 'dress', 'mommy', 'daddy'] as const
+const modules = ['game', 'room', 'dress', 'mommy', 'daddy', 'care'] as const
 watch(() => ready.value && modules.map(m => JSON.stringify(useModule(m).value)).join('|').length, () => {
   clearTimeout(t)
   t = setTimeout(evaluate, 400)

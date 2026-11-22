@@ -46,6 +46,13 @@ export const moduleDefaults: { [K in ModuleKey]: () => Modules[K] } = {
     surprise: { frequency: 'every2', animations: true, lastShownDate: null, recentIds: [] },
   }),
   journey: () => ({ nickname: '', week: null, milestones: [], notes: [], memories: [] }),
+  care: () => ({
+    needs: { hunger: 80, clean: 85, diaper: 85, sleep: 80, fun: 80 },
+    lastTick: Date.now(),
+    total: 0,
+    counts: { hunger: 0, clean: 0, diaper: 0, sleep: 0, fun: 0 },
+    lastBonusDate: null,
+  }),
 }
 
 /** Items that never need unlocking (free from the start). */
