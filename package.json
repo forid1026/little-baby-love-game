@@ -1,0 +1,45 @@
+{
+  "name": "little-baby-love",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "build": "nuxt generate",
+    "preview": "npx serve .output/public -l 4173",
+    "typecheck": "nuxt typecheck",
+    "test": "node tests/utils.test.ts && node tests/bubble-engine.test.ts",
+    "postinstall": "nuxt prepare",
+    "icons": "node scripts/generate-icons.mjs && capacitor-assets generate --android",
+    "cap:sync": "nuxt generate && cap sync android",
+    "cap:open": "cap open android",
+    "android:debug": "nuxt generate && cap sync android && cd android && gradlew.bat assembleDebug",
+    "android:release-aab": "nuxt generate && cap sync android && cd android && gradlew.bat bundleRelease",
+    "android:release-apk": "nuxt generate && cap sync android && cd android && gradlew.bat assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
+    "@fontsource-variable/nunito": "^5.3.0",
+    "nuxt": "^4.6.4",
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.1"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.6.2",
+    "@tailwindcss/vite": "^4.3.5",
+    "@vite-pwa/nuxt": "^2.0.3",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.14"
+  }
+}
